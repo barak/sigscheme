@@ -28,7 +28,7 @@ if MAINTAINER_MODE
 	fi
 endif
 
-html: $(ASCIIDOC_HTMLS)
+html-local: $(ASCIIDOC_HTMLS)
 clean-html:
 	rm -f $(ASCIIDOC_HTMLS)
 
