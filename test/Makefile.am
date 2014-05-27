@@ -122,7 +122,7 @@ imported_tests = \
 
 EXTRA_DIST += $(sscm_tests) $(imported_tests)
 
-TESTS_ENVIRONMENT = $(SH) $(top_builddir)/test/run-singletest.sh
+LOG_COMPILER = $(abs_top_builddir)/src/sscm --system-load-path $(abs_top_builddir)/lib
 if USE_SHELL
 TESTS = $(sscm_tests) $(sscm_optional_tests)
 XFAIL_TESTS = $(sscm_xfail_tests)

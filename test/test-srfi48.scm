@@ -43,7 +43,7 @@
     (test-skip "SRFI-48 is not enabled"))
 
 ;; test SRFI-28 compatible part of SRFI-48
-(load "./test/test-srfi28.scm")
+(load "test-srfi28.scm")
 (newline)
 
 (define tn test-name)

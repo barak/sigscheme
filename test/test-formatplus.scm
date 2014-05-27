@@ -42,7 +42,7 @@
 
 ;; test SRFI-48 compatible part of format+
 (define format format+)
-(load "./test/test-srfi48.scm")
+(load "test-srfi48.scm")
 (newline)
 
 (define tn test-name)
