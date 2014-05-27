@@ -230,8 +230,8 @@ TST_CASE("char")
 TST_CASE("symbol")
 {
     ScmObj obj;
-    char *p = scm_strdup("abcdefghijklmnopqrstuv");
-    p = (char*)(((intptr_t)p + 7)& (-8));
+    char *p = "abcdefghijklmnopqrstuv";
+    p = (char*)(((intptr_t)p + sizeof(ScmCell)-1)&(-sizeof(ScmCell)));
 
 #define SYMBOL_TST(tst, nam, val)               \
     tst(obj, SYMBOL,                            \
@@ -340,10 +340,10 @@ TST_CASE("func")
         CFUNC, FPTR, fun)
 
     typedef ScmFuncType FPTR;
-    FUNC_TST(TST_INIT2, SCM_SYNTAX_VARIADIC_1, (ScmFuncType)0xdeadbeef);
+    FUNC_TST(TST_INIT2, SCM_SYNTAX_VARIADIC_1, (ScmFuncType)0);
     FUNC_TST(TST_SET2, SCM_PROCEDURE_FIXED_4, (ScmFuncType)0);
 #if (SIZEOF_SCMOBJ == SIZEOF_INT64_T)
-    FUNC_TST(TST_INIT2, SCM_SYNTAX_VARIADIC_1, (ScmFuncType)0xdeadbeeffeed);
+    FUNC_TST(TST_INIT2, SCM_SYNTAX_VARIADIC_1, (ScmFuncType)0);
 #endif
 }
 
@@ -408,12 +408,12 @@ TST_CASE("C func ptr")
         VALUE, FPTR, p)
 
     typedef ScmCFunc FPTR;
-    CFPTR_TST(TST_INIT1, (ScmCFunc)0xdeadbeef);
-    CFPTR_TST(TST_SET1, (ScmCFunc)0xbaddeed);
+    CFPTR_TST(TST_INIT1, (ScmCFunc)0);
+    CFPTR_TST(TST_SET1, (ScmCFunc)0);
 #if (SIZEOF_SCMOBJ == SIZEOF_INT64_T)
     /* both MSB and LSB are set */
-    CFPTR_TST(TST_INIT1, (ScmCFunc)0xadeadbeeffedbeef);
-    CFPTR_TST(TST_SET1, (ScmCFunc)0xbaddeedbeddad);
+    CFPTR_TST(TST_INIT1, (ScmCFunc)0);
+    CFPTR_TST(TST_SET1, (ScmCFunc)0);
 #endif
 }
 #endif /* use sscm extension mechanism */
