@@ -13,6 +13,8 @@ AM_INIT_AUTOMAKE([1.10 subdir-objects dist-bzip2 -Wall])
 # SigScheme.
 AM_MAINTAINER_MODE
 
+PKG_INSTALLDIR
+
 #
 # Checks for programs
 #

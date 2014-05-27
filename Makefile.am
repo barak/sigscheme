@@ -25,7 +25,6 @@ EXTRA_DIST = \
         make-report.sh make-dist.sh
 
 if USE_LIBSSCM
-pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = sigscheme.pc
 endif
 
