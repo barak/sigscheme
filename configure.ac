@@ -7,7 +7,7 @@ AM_INIT_AUTOMAKE([1.10 subdir-objects dist-bzip2 -Wall])
 
 # Enable this iff asprintf(3) or another GNU extension is needed. This macro
 # must be invoked immediately after initialization.
-#AC_GNU_SOURCE
+#AC_USE_SYSTEM_EXTENSIONS
 
 # --enable-maintainer-mode is requied to build Git repository version of
 # SigScheme.
@@ -21,7 +21,7 @@ PKG_INSTALLDIR
 
 AC_PROG_CC
 AM_PROG_AR
-AC_PROG_LIBTOOL
+LT_INIT
 AC_PROG_LN_S
 AC_PROG_EGREP
 # Prefers GNU sed if found. GNU sed is required for generating
@@ -172,7 +172,6 @@ AC_TYPE_SSIZE_T
 #AC_TYPE_MODE_T
 #AC_TYPE_OFF_T
 #AC_TYPE_PID_T
-#AC_TYPE_SIGNAL
 #AC_TYPE_UID_T
 
 if $CC --version >/dev/null 2>/dev/null; then
