@@ -3,10 +3,10 @@
 *.o
 .deps/
 .libs/
+Makefile
+Makefile.in
 
 /ChangeLog
-/Makefile
-/Makefile.in
 /aclocal.m4
 /ar-lib
 /autom4te.cache
@@ -33,13 +33,7 @@
 /uim.pc
 /uim.spec
 
-# /bench/
-/bench/Makefile
-/bench/Makefile.in
-
 # /doc/
-/doc/Makefile
-/doc/Makefile.in
 /doc/design.html
 /doc/global-obj.html
 /doc/index.html
@@ -48,11 +42,10 @@
 /doc/spec.html
 /doc/style.html
 
+# /experimental/
+!/experimental/imm-const/Makefile
+
 # /include/
-/include/Makefile
-/include/Makefile.in
-/include/sigscheme/Makefile
-/include/sigscheme/Makefile.in
 /include/sigscheme/config-old.h
 /include/sigscheme/config.h
 /include/sigscheme/encoding-dummy.h
@@ -65,13 +58,9 @@
 /include/sigscheme/storage-fatty.h
 
 # /lib/
-/lib/Makefile
-/lib/Makefile.in
 /libgcroots.mk
 
 # /m4/
-/m4/Makefile
-/m4/Makefile.in
 /m4/libtool.m4
 /m4/ltoptions.m4
 /m4/ltsugar.m4
@@ -80,8 +69,6 @@
 
 # /src/
 /src/.deps/
-/src/Makefile
-/src/Makefile.in
 /src/config.h
 /src/config.h.in
 /src/functable-legacy-macro.c
@@ -124,8 +111,6 @@
 
 # /test-c/
 /test-c/.deps/
-/test-c/Makefile
-/test-c/Makefile.in
 /test-c/collect.sh
 /test-c/test-alignment-coll.c
 /test-c/test-array2list-coll.c
@@ -141,11 +126,7 @@
 /tools/gnuify-changelog.pl
 
 # /test/
-/test/Makefile
-/test/Makefile.in
 /test/run-singletest.sh
 
 # /tools/
-/tools/Makefile
-/tools/Makefile.in
 /tools/gnuify-changelog.pl
